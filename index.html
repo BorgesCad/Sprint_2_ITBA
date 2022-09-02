@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title> Sprint 2</title>
+    <!-- Styles -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -12,46 +13,53 @@
   
 </head>
 <body>
-    <div class="container rounded-3 text-white my-3">
+    <div class="b-container container rounded-3 text-white my-3 py-2">
 <!--============================================ TITULO ==========================================================-->
-        <p class="fs-1 text-center"> App de gastos</p>
+        <h1 class="text-center"> App de gastos</h1>
 <!--==============================================================================================================-->
 <!--============================================ CATEGORIAS ======================================================-->
         <div class="row g-2">
-            <div class="col">
-                <p class="categoria my-0 mx-2 fst-italic"> Nombre </p>
-                <input id="nombre" type="text" class="form-control" placeholder="Ej: Juan" aria-label="Nombre">
+            <div class="col-lg-4 col-md-4 col-sm-6 col-12">
+                <p class="my-0 mx-2 fst-italic"> Nombre </p>
+                <input id="name" type="text" class="form-control" placeholder="Ej: Juan" aria-label="Nombre">
             </div>
-            <div class="col">
-                <p class="categoria my-0 mx-2 fst-italic"> Gasto realizado </p>
-                <input id="gasto" type="number" class="form-control" placeholder="Ej: $100" aria-label="Gasto">
+            <div class="col-lg-4 col-md-4 col-sm-6 col-12">
+                <p class="my-0 mx-2 fst-italic"> Gasto realizado </p>
+                <input id="amount" type="number" class="form-control" placeholder="Ej: $100" aria-label="Monto">
             </div>
 <!--==============================================================================================================-->
 <!--============================================ BOTÓN "AGREGAR" =================================================-->
-            <div class="d-grid gap-2">
-                <button onclick="capturar(nombre, gasto)" class="btn btn-primary" type="button"> Agregar </button>
+            <div class="col-lg-4 col-md-4 col-sm-12 col-12 d-grid py-1">
+                <button id="b-btn" class="btn btn-primary" type="button"> Agregar </button>
             </div>
 <!--==============================================================================================================-->
+        </div>
+        <div class="row gx-2">
 <!--============================================ DATOS RECIBIDOS =================================================-->
-            <div class="rounded my-2 entrega">
-                <p class="m-2" id="entrega"> Esperando datos... </p>
+            <div class="col-lg-6 col-md-6 col-sm-6 col-12">
+                <div class="b-min-h b-data mt-2 mb-1 rounded">
+                    <p class="m-2" id="data"> Esperando datos... </p>
+                </div>
             </div>
 <!--==============================================================================================================-->
 <!--============================================ RESULTADOS ======================================================-->
-            <div class="results rounded m-0">
-                <p class="fs-6 mx-1 my-0"> Se gastó en total: 
-                <p class="mx-1 my-0" id="resultado"></p>
-                <p class="fs-6 mx-1 my-0"> Cada persona debe aportar:
-                <p class="mx-1 my-0" id="aporte"></p>
-            </div>
-<!--==============================================================================================================-->
-<!--============================================ BOTÓN "VACIAR" ==================================================-->
-            <div class="d-grid gap-2 col-6 mx-auto my-2">
-                <button onclick="vaciar(nombre, gasto, resultado, aporte)"class="btn btn-secondary" type="button">Vaciar</button>
+            <div class="col-lg-6 col-md-6 col-sm-6 col-12">
+                <div class="b-min-h b-results mt-2 rounded">
+                    <p class="fs-6 mx-1 my-0"> Se gastó en total: 
+                    <p class="mx-1 my-0" id="results"></p>
+                    <p class="fs-6 mx-1 my-0"> Cada persona debe aportar:
+                    <p class="mx-1 my-0" id="contribution"></p>    
+                </div>    
             </div>
 <!--==============================================================================================================-->
         </div>
     </div>
+    <!-- !Copyright  -->
+    <div class="text-white bg-dark bg-opacity-50 text-center p-2">
+        © 2022 Copyright:
+        <a class="text-reset fw-bold" target="_blank" href="https://github.com/JorgeCadima/Sprint_2_ITBA">ITBANK - Borges</a>
+    </div>
+    <!-- !========= -->
     <script src="index.js">
     </script>
 </body>

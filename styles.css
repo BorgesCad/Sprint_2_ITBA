@@ -2,34 +2,29 @@ body {
     background-color: #5D136C;
 }
 /* ============= CONTAINER PADRE ============= */
-.container{
+.b-container{
     transition: box-shadow 0.3s ease;
     background-color: #FF9781;
-    max-width: 80%;
     font-family: "Noto Sans", sans-serif;
     box-shadow: 0 0.5rem 1rem rgba(0,0,0, 0.3);
 }
-.container:hover{
+.b-container:hover{
     box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.7);
 }
 /* =========================================== */
-/* ============= TIPO DE DATO ================ */
-.categoria{
-    min-width: 7.5em;
-}
-/* =========================================== */
+
 /* ============= DATOS RECIBIDOS ============= */
-.entrega{
+.b-data{
     background-color: #88B065;
     max-height: 7.5em;  
-    overflow-y: scroll;
-}
-.entrega p{
-    margin: 0;
+    overflow: auto;
 }
 /* =========================================== */
 /* ============= RESULTADOS ================== */
-.results{
+.b-results{
     background-color: #9510AC;
 }
 /* =========================================== */
+.b-min-h{
+    min-height: 3em; /* Aplica a resultados */
+}

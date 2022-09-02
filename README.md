@@ -16,3 +16,5 @@ programa completo.
 corrección de errores del anterior commit.
 # 9_ novenoCommit:
 correción de errores y últimos retoques del anterior commit.
+# 10_decimoCommit:
+Se rearmó el código HTML, CSS y JS.

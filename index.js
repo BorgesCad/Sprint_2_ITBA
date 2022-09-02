@@ -1,40 +1,38 @@
-let nropersona= 0;
-let gastoTotal= 0;
-let aporte= 0;
-function capturar(){
-    let nombre=document.getElementById("nombre").value;
-    let gasto=document.getElementById("gasto").value;
-    if (nombre == ""){
-        document.getElementById("nombre").focus();
-    } else if (gasto == "") {
-        document.getElementById("gasto").focus();
-    } else {
-        let entrega= nombre.concat(" $" + gasto);
-        gastoTotal= gastoTotal + parseInt(gasto);
-        if (nropersona == 0) {
-            nropersona++;
-            document.getElementById("entrega").innerHTML = entrega + '<p id="' + nropersona + '">' + "</p>";
-            document.getElementById("resultado").innerHTML = "$" + gastoTotal;
-            document.getElementById("aporte").innerHTML = "Esperando a que ingrese a otra persona";
-            document.getElementById("nombre").value = "";
-            document.getElementById("gasto").value = "";
-        }else{
-            document.getElementById(nropersona).innerHTML = entrega + '<p id="' + (nropersona += 1) + '">' + "</p>";
-            document.getElementById("resultado").innerHTML = "$" + gastoTotal;
-            aporte = gastoTotal/nropersona;
-            document.getElementById("aporte").innerHTML = "$" + aporte;
-            document.getElementById("nombre").value = "";
-            document.getElementById("gasto").value = "";
+let people = [];
+let verification = false;
+let totalAmount = 0;
+let contribution = 0;
+let btn = document.getElementById('b-btn');
+
+btn.addEventListener('click', () => { // Función CAPTURAR y AGREGAR
+    let name = document.getElementById('name').value;
+    let amount = document.getElementById('amount').value;
+    let data = name + ' $' + amount;
+    validation (name, amount) // Validar datos
+    if ( verification == true) {
+        people.push(data);
+        document.getElementById('data').innerHTML = '' //! Para que se vacie y no se acumule
+        for (let i = 0; i < people.length; i++) {
+            document.getElementById('data').innerHTML += '<p>' + people[i] + '</p>';
         }
+        results(amount, people); //* Resultados
+    }
+})
+function validation(value1, value2){ //  Función VERFICAR QUE LOS DATOS SEAN VALIDOS
+    if (value1 == '' | value2 == ''){
+        alert('Es obligatorio llenar todos los campos')
+        verification = false;
+    } else{
+        verification = true;
     }
 }
-function vaciar(){
-    gastoTotal = 0;
-    nropersona = 0;
-    aporte = 0;
-    document.getElementById("nombre").value = "";
-    document.getElementById("gasto").value = "";
-    document.getElementById("entrega").innerHTML = "Esperando datos...";
-    document.getElementById("resultado").innerHTML = "";
-    document.getElementById("aporte").innerHTML = "";
+function results(amount, people){ //* Resultados del gasto total y aporte de cada persona
+    if (people.length == 1) {
+        document.getElementById('data').innerHTML = 'Ingrese una persona más'
+    } else {
+        totalAmount += parseInt(amount);
+        document.getElementById('results').innerHTML = '$' + totalAmount;
+        contribution = totalAmount/people.length;
+        document.getElementById('contribution').innerHTML = '$' + contribution;
+    }
 }
