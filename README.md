@@ -18,3 +18,5 @@ corrección de errores del anterior commit.
 correción de errores y últimos retoques del anterior commit.
 # 10_decimoCommit:
 Se rearmó el código HTML, CSS y JS.
+# 11_Commit:
+Modificación del código (detalles pequeños)
